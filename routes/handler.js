@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/home", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
   const str = {
     testimonials: [
       {
@@ -49,10 +50,11 @@ router.get("/home", (req, res) => {
       },
     ],
   };
-  res.end(JSON.stringify(str));
+  res.send(JSON.stringify(str));
 });
 
 router.get("/", (req, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
   const str = {
     testimonials: [
       {
@@ -100,7 +102,7 @@ router.get("/", (req, res) => {
       },
     ],
   };
-  res.end(JSON.stringify(str));
+  res.send(JSON.stringify(str));
 });
 
 module.exports = router;
