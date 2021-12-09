@@ -34,19 +34,19 @@ router.get("/home", (req, res) => {
       },
       {
         question:
-          "Is it necessary to keep my camera switched on throughout the session?",
+          "What will be the form of talk- Audio meet or a video meeting?",
         answer:
-          "No, it is not necessary. But we would prefer you to keep it on for better interaction.",
+          "Zevamp aims at relieving social anxiety and awkwardness; henceforth, having a video experience will aid in better interaction. So, it is preferable if the users try to connect with the device supporting video.",
       },
       {
         question: "Can I schedule my meeting as per my choice of time?",
         answer:
-          "Yes. We at Zevamp care about our users and are happy to assist you.",
+          "Yes. We at Zevamp prioritize the comfort and the valuable time of the users and hereby are happy to assist you.",
       },
       {
         question: "What happens if any of us loses network connection midway?",
         answer:
-          "Without any hurry, you can rejoin the meet once your connectivity is regained. Else our team will connect to you through a normal voice call and continue the rest of the meet.",
+          "Without any hurry, you can rejoin the meet once your connectivity is stabilized. If not, our team will connect  you to the meet through a normal voice call.",
       },
     ],
   };
@@ -86,19 +86,19 @@ router.get("/", (req, res) => {
       },
       {
         question:
-          "Is it necessary to keep my camera switched on throughout the session?",
+          "What will be the form of talk- Audio meet or a video meeting?",
         answer:
-          "No, it is not necessary. But we would prefer you to keep it on for better interaction.",
+          "Zevamp aims at relieving social anxiety and awkwardness; henceforth, having a video experience will aid in better interaction. So, it is preferable if the users try to connect with the device supporting video.",
       },
       {
         question: "Can I schedule my meeting as per my choice of time?",
         answer:
-          "Yes. We at Zevamp care about our users and are happy to assist you.",
+          "Yes. We at Zevamp prioritize the comfort and the valuable time of the users and hereby are happy to assist you.",
       },
       {
         question: "What happens if any of us loses network connection midway?",
         answer:
-          "Without any hurry, you can rejoin the meet once your connectivity is regained. Else our team will connect to you through a normal voice call and continue the rest of the meet.",
+          "Without any hurry, you can rejoin the meet once your connectivity is stabilized. If not, our team will connect  you to the meet through a normal voice call.",
       },
     ],
   };
