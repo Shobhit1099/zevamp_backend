@@ -6,21 +6,21 @@ router.get("/home", (req, res) => {
   const str = {
     testimonials: [
       {
-        img: "images/user1.jpeg",
+        img: "images/users/user1.jpeg",
         uname: "Arunesh Singh",
         review:
           "Would love to appreciate the idea that addresses some legit student/work life problems in self development and growth",
         rate: 5,
       },
       {
-        img: "images/user2.jpeg",
+        img: "images/users/user2.jpeg",
         uname: "Vedansh Rai",
         review:
           "When the pandemic is limiting socialization, a platform like this can help students and professionals to connect with each other and develop themselves without any restrictions.",
         rate: 5,
       },
       {
-        img: "images/user3.jpeg",
+        img: "images/users/user3.jpeg",
         uname: "Shreya",
         review: "Amazing hour. A great utilization of the online platform.",
         rate: 5,
@@ -58,21 +58,21 @@ router.get("/", (req, res) => {
   const str = {
     testimonials: [
       {
-        img: "images/user1.jpeg",
+        img: "images/users/user1.jpeg",
         uname: "Arunesh Singh",
         review:
           "Would love to appreciate the idea that addresses some legit student/work life problems in self development and growth",
         rate: 5,
       },
       {
-        img: "images/user2.jpeg",
+        img: "images/users/user2.jpeg",
         uname: "Vedansh Rai",
         review:
           "When the pandemic is limiting socialization, a platform like this can help students and professionals to connect with each other and develop themselves without any restrictions.",
         rate: 5,
       },
       {
-        img: "images/user3.jpeg",
+        img: "images/users/user3.jpeg",
         uname: "Shreya",
         review: "Amazing hour. A great utilization of the online platform.",
         rate: 5,
