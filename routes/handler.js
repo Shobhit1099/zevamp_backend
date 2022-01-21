@@ -30,7 +30,7 @@ router.get("/home", (req, res) => {
       {
         question: "What is Zevamp?",
         answer:
-          "Zevamp brings to you an entirely innovative experience by pairing you with a completely different personality as that of yours. We carry you to the most fantastic video talk with them, delivering an experience that can indeed advise your better future.",
+          "Zevamp is a spot for distinct personalities to indulge into deep conversations, helping the real 'You' to prosper.",
       },
       {
         question:
@@ -82,7 +82,7 @@ router.get("/", (req, res) => {
       {
         question: "What is Zevamp?",
         answer:
-          "Zevamp brings to you an entirely innovative experience by pairing you with a completely different personality as that of yours. We carry you to the most fantastic video talk with them, delivering an experience that can indeed advise your better future.",
+          "Zevamp is a spot for distinct personalities to indulge into deep conversations, helping the real 'You' to prosper.",
       },
       {
         question:
