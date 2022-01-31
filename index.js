@@ -7,6 +7,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const fetch = require("cross-fetch");
 const generator = require("generate-password");
+const path = require("path");
 require("dotenv").config();
 
 const app = express();
