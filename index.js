@@ -1,20 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-// const routesHandler = require("./routes/handler.js");
+const routesHandler = require("./routes/handler.js");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const fetch = require("cross-fetch");
 const generator = require("generate-password");
-const path = require("path");
 require("dotenv").config();
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// app.use("/", routesHandler);
+app.use("/", routesHandler);
 
 app.use(
   session({
@@ -161,36 +160,38 @@ app.get("/", (req, res) => {
 app.get("/app/home", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
   var userMap = {};
-  fetch("https://api.typeform.com/forms/IxhcTSuG/responses", {
-    method: "GET",
-    headers: {
-      authorization: `bearer ${process.env.ACCESS_TOKEN}`,
-    },
-  })
-    .then(function (response) {
-      if (response.status !== 200) {
-        console.log(
-          "Looks like there was a problem. Status Code: " + response.status
-        );
-        return;
-      }
-      response.json().then(function (data) {
-        data.items.map((item) => {
-          if (item.answers.length === 7) {
-            User.find({}, function (err, users) {
-              users.forEach(function (user) {
-                userMap[user._id] = user;
-              });
-            });
-          }
-        });
-      });
+  if (req.isAuthenticated()) {
+    fetch("https://api.typeform.com/forms/IxhcTSuG/responses", {
+      method: "GET",
+      headers: {
+        authorization: `bearer ${process.env.ACCESS_TOKEN}`,
+      },
     })
-    .catch(function (err) {
-      console.log("Fetch Error :-S", err);
-    });
-  console.log("USER DATA", userMap);
-  res.send(JSON.stringify(userMap));
+      .then(function (response) {
+        if (response.status !== 200) {
+          console.log(
+            "Looks like there was a problem. Status Code: " + response.status
+          );
+          return;
+        }
+        response.json().then(function (data) {
+          data.items.map((item) => {
+            if (item.answers.length === 7) {
+              User.find({}, function (err, users) {
+                users.forEach(function (user) {
+                  userMap[user._id] = user;
+                });
+              });
+            }
+          });
+        });
+      })
+      .catch(function (err) {
+        console.log("Fetch Error :-S", err);
+      });
+    console.log("USER DATA", userMap);
+    res.send(JSON.stringify(userMap));
+  } else res.render("/");
 });
 
 const PORT = process.env.PORT || 4000;
