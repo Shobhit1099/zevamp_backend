@@ -10,7 +10,7 @@ require("dotenv").config();
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "*",
+  origin: ["http://localhost:3000","https://zevamp.com"],
   credentials: true,
   optionSuccessStatus: 200,
 };

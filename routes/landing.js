@@ -9,7 +9,7 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 
-router.use(cors(corsOptions));
+// router.use(cors(corsOptions));
 
 router.get("/", (req, res) => {
   const str = {
