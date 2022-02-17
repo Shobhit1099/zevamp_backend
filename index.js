@@ -22,6 +22,14 @@ const corsOptions = {
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
+if (process.env.NODE_ENV === "production") {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, "zevamp_frontend/build")));
+  // Handle React routing, return all requests to React app
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "zevamp_frontend/build", "index.html"));
+  });
+}
 app.use("/app", appRoutes);
 app.use("/", landingRoutes);
 
