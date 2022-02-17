@@ -140,7 +140,7 @@ fetch(API_URL, {
     console.log("Fetch Error :-S", err);
   });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Up and running on ${PORT}`);
+const port = process.env.PORT || 4000;
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Up and running on ${port}`);
 });
