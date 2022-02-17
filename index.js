@@ -2,6 +2,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const appRoutes = require("./routes/app.js");
 const landingRoutes = require("./routes/landing.js");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const fetch = require("cross-fetch");
@@ -12,8 +13,15 @@ require("dotenv").config();
 
 const app = express();
 
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors(corsOptions));
 app.use("/app", appRoutes);
 app.use("/", landingRoutes);
 
