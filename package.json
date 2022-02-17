@@ -10,7 +10,12 @@
     "client": "npm run start --prefix ../zevamp_frontend",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \" npm run client\""
   },
-  "keywords": [],
+  "engines": {
+    "node": "16.14.0"
+  },
+  "keywords": [
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
