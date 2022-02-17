@@ -10,7 +10,7 @@ require("dotenv").config();
 const cors = require("cors");
 
 const corsOptions = {
-  origin: ["http://localhost:3000","https://zevamp.com"],
+  origin: ["http://localhost:3000", "https://zevamp.com"],
   credentials: true,
   optionSuccessStatus: 200,
 };
@@ -50,7 +50,7 @@ router.post(
       const token = signToken(_id);
       res.cookie("access_token", token, { httpOnly: true, sameSite: true });
       res.status(200).json({ isAuthenticated: true, auth: { username } });
-    } else console.log("FAIL");
+    }
   }
 );
 
