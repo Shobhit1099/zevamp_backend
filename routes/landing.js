@@ -1,17 +1,13 @@
 const express = require("express");
 const router = express.Router();
 require("dotenv").config();
-const cors = require("cors");
-
-const corsOptions = {
-  origin: "*",
-  credentials: true,
-  optionSuccessStatus: 200,
-};
-
-// router.use(cors(corsOptions));
 
 router.get("/", (req, res) => {
+  var allowedDomains = ["http://localhost:3000", "https://zevamp.com"];
+  var origin = req.headers.origin;
+  if (allowedDomains.indexOf(origin) > -1) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
   const str = {
     testimonials: [
       {
