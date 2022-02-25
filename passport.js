@@ -20,7 +20,6 @@ passport.use(
       secretOrKey: process.env.SECRET,
     },
     (payload, done) => {
-      console.log("PAYLOAD", payload);
       Auth.findById({ _id: payload.sub }, (err, auth) => {
         if (err) return done(err, false);
         if (auth) return done(null, auth);
